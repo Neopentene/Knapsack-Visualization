@@ -303,13 +303,13 @@ function knapsackVisualization() {
                         if (first) {
                             setTimeout(() => {
                                 let coordinates = getImgCoordinates()
-                                moveDisappear(coordinates.top, (coordinates.width - coordinates.top + 2 * i) / 2)
+                                moveDisappear(coordinates.left, coordinates.top)
                             }, 1000)
                             first = false
                         }
                         else {
                             let coordinates = getImgCoordinates()
-                            moveDisappear(coordinates.top, (coordinates.width - coordinates.top + 2 * i) / 2)
+                            moveDisappear(coordinates.left, coordinates.top)
                         }
 
                         if (bag.Capacity - knapsack[0].weight >= 0) {
@@ -352,11 +352,11 @@ function knapsackVisualization() {
     knapsackData.innerHTML = `<p style="color: red;">Starting Knapsack Problem</p>`
 }
 
-function moveDisappear(top, left) {
+function moveDisappear(x, y) {
     BagItems.firstChild.style.zIndex = "-1"
     BagItems.firstChild.style.transition = "2s"
     console.log("move", BagItems.firstChild)
-    BagItems.firstChild.style.transform = `translate(${top}px, ${left}px)`
+    BagItems.firstChild.style.transform = `translate(${x}px, ${y}px)`
     BagItems.firstChild.style.opacity = "0"
 }
 
@@ -367,10 +367,14 @@ function squareDiv(weight, value) {
 
 function getImgCoordinates() {
     let img = document.getElementById("BagImg")
+    let imgRect = img.getBoundingClientRect()
+    let objectRect = BagItems.firstChild.getBoundingClientRect()
+    let top = (imgRect.top + imgRect.height / 2) - objectRect.bottom
+    let left = (imgRect.left + imgRect.width / 2) - (objectRect.left + objectRect.width / 2)
+    console.log(top, left)
     return {
-        top: img.offsetTop,
-        left: img.offsetLeft,
-        width: img.offsetWidth
+        top: top,
+        left: left
     }
 }
 
