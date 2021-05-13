@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Visualization of Greedy Knapsack Problem">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href="styles/styles.css">
+    <link rel="icon" type="image/x-icon" href="assets/Bag.ico">
+    <title>Knapsack Visualization</title>
+</head>
+
+<body class="body">
+    <div class="title">
+        <img src="assets/bag-icon-png-7.png">
+        <h1>Knapsack Visualization</h1>
+    </div>
+
+    <div id="previsualizeBtn" class="previsualizeBtn">
+        <div class="AddItemContainer">
+            <div style="display: inline-flex;">
+
+                <button id="AddItem" class="add" onclick="showPopUp()" style="margin-top: 8px;">Add Knapsack
+                    Item</button>
+
+                <button id="Visualize" class="add" onclick="showCapacityPopUp()"
+                    style="margin-top: 8px;">Visualize</button>
+
+                <button id="Continue" class="add" onclick="ContinueVisualization()" style="margin-top: 8px;"
+                    hidden>Continue
+                    Visualization</button>
+            </div>
+        </div>
+    </div>
+    <label id="MessageDisplay"></label>
+    <div id="FormatOfBag" class="BagItemExample">
+        <div id="FormatExample">
+            <p></p>
+        </div>
+    </div>
+
+    <div id="NewItemPop" class="absolute">
+        <div>
+            <form id="NewItem">
+                <label>New Item:</label>
+
+                <input id="Weight" type="number" placeholder="Weight" min="1" required>
+
+                <input id="Value" type="number" placeholder="Value" min="1" required>
+                <div>
+                    <button class="add" type="submit">Add</button>
+
+                    <button class="add" type="reset">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div id="KnapsackCapacity" class="absolute">
+        <div>
+            <form id="KnapSackCapacity">
+                <label style="margin-bottom: 4px;">Enter knapsack Capacity:</label>
+
+                <input id="Capacity" type="number" placeholder="Knapsack Size" min="1" required>
+
+                <div>
+                    <button class="add" type="submit">Start</button>
+
+                    <button class="add" type="reset">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div style="display: flex; justify-content: center;flex-wrap: wrap; text-align: center; margin-top: 20px;">
+        <div id="BagValuesPreVisualization" class="previsualize">
+            <div id="BagItems" class="BagItem">
+            </div>
+        </div>
+        <div id="BagValuesPostVisualization" class="postvisualize">
+            <div id="Bag" class="Bag">
+                <img src="assets/bag-icon-png-7.png" id="BagImg">
+                <div id="KnapsackData">Weight<br>Value</div>
+                <div id="ObjectList"></div>
+                <button id="ResetAll" class="add" onclick="resetAll()" style="margin-top: 20px;">Reset</button>
+            </div>
+        </div>
+    </div>
+    <script src="javascript/KnapsackWorking.js"></script>
+</body>
+
+</html>

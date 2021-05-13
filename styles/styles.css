@@ -1,0 +1,316 @@
+.body{
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+.title{
+    width: 100%;
+    height: fit-content;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    background-color: black;
+    border-bottom: 2px solid aquamarine;
+    margin-bottom: 5px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.title img{
+    width: 3%;
+    min-width: 30px;
+    margin-right: 20px;
+    filter: invert();
+    -webkit-filter: invert();
+    object-fit: scale-down;
+}
+
+.title h1{
+    font-size: 1.8em;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: white;
+}
+
+.previsualizeBtn{
+    display: flex;
+    justify-self: center;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+    padding: 5px;
+    position: sticky;
+    position: -webkit-sticky;
+    top: 0;
+}
+
+.add{
+    padding: 4px 12px;
+    border: 2px solid aqua;
+    border-radius: 4px;
+    outline: none;
+    background-color: white;
+    box-shadow: 0 4px 6px 0 rgba(0,0,0,0.2);
+}
+
+.add:hover{
+    background-color: aqua;
+    box-shadow: 0 6px 8px 0 rgba(0,0,0,0.2);
+}
+
+.add:active{
+    background-color: aqua;
+    box-shadow: 0 3px 5px 0 rgba(0,0,0,0.2);
+}
+
+#AddItem{
+    margin-right: 1em;
+}
+#Visualize{
+    margin-left: 1em;
+}
+
+#Continue{
+    margin-left: 2em;
+}
+
+.absolute {
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    position: absolute;
+    visibility: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    left: 0;
+}
+
+.absolute div{
+    height: fit-content;
+    width: fit-content;
+    border-radius: 4px;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    padding: 10px;
+}
+
+.absolute div form{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+    text-align: center;
+}
+
+.absolute div form label{
+    color: cadetblue;
+}
+
+.absolute div form input{
+    width: 200px;
+    padding: 5px;
+    outline: none;
+    border: 1px solid lightskyblue;
+    border-radius: 4px;
+    display: block;
+    margin: 5px;
+}
+
+.absolute div form input:focus{
+    border: 1px solid black;
+    border-radius: 4px;
+}
+
+.absolute div form div{
+    width: fit-content;
+    display: inline;
+}
+
+.absolute div form button{
+    display: inline;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.previsualize{
+    width: 80%;
+    height: 100%;
+    background-color: transparent;
+    display: flex;
+    justify-self: center;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    flex-direction: row;
+    transition: 1s;
+}
+
+.BagItemExample{
+    top: 0px;
+    left: 90%;
+    display: flex;
+    margin-top: 20px;
+    color: cadetblue;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    justify-self: center;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
+#MessageDisplay{
+    display: none;
+    color: cadetblue;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    justify-self: center;
+    justify-content: center;
+    margin-top: 10px;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
+.BagItemExample div{
+    width: 110px;
+    height: 110px;
+    margin: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    border: 3px green solid;
+    text-align: center;
+    transform-origin: center;
+}
+
+.BagItem{
+    display: flex;
+    color: cadetblue;
+    margin: 0;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
+.BagItem div{
+    width: 90px;
+    height: 90px;
+    margin: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    border: 3px green solid;
+    text-align: center;
+    transform-origin: center;
+    cursor: pointer;
+}
+
+.BagItem div:hover{
+    border: 3px lightcoral solid;
+    transform: scale(1.05);
+}
+
+.BagItem div:active{
+    border: 3px red solid;
+    transform: scale(1);
+}
+
+.postvisualize{
+    width: 80%;
+    display: none;
+    justify-self: center;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    position: relative;
+    flex-direction: column;
+    background-color: transparent;
+    padding: 5px;
+}
+
+.BagItemSorted{
+    display: flex;
+    color: cadetblue;
+    margin: 0;
+    position: absolute;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: small;
+    font-style: bold;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
+.Bag{
+    display: flex;
+    justify-content: center;
+    justify-self: center;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+
+.Bag img{
+    width: 60%;
+    min-width: 240px;
+    margin-top: 30px;
+    object-fit: scale-down;
+}
+
+.Bag div{
+    display: none;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: cadetblue;
+    font-size: larger;
+    text-align: left;
+}
+
+#ObjectList{
+    display: flex;
+    justify-content: center;
+    justify-self: center;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+    color: cadetblue;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: small;
+}
+
+#ObjectList div{
+    display: flex;
+    padding: 10px;
+    flex-wrap: wrap;
+    margin-top: 10px;
+    flex-direction: column;
+    border: 2px green solid;
+    border-radius: 4px;
+}
+
+.BagItemSorted div{
+    width: 80px;
+    height: 80px;
+    margin: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 4px;
+    border: 1px green solid;
+    text-align: center;
+}
