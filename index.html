@@ -82,10 +82,12 @@
                 <img src="assets/bag-icon-png-7.png" id="BagImg">
                 <div id="KnapsackData">Weight<br>Value</div>
                 <div id="ObjectList"></div>
-                <button id="ResetAll" class="add" onclick="resetAll()"
-                    style="margin-top: 20px; margin-bottom: 20px;">Reset</button>
-                <button id="ResetKnapAni" class="add" onclick="knapsackResetAnimation()"
-                    style="margin-bottom: 20px; display: none;">Replay</button>
+                <div style="display: flex; flex-wrap: row; margin-top: 10px; margin-bottom: 10px;">
+                    <button id="ResetAll" class="add" onclick="resetAll()"
+                        style="flex: 1 1 auto; margin: 5px;">Reset</button>
+                    <button id="ResetKnapAni" class="add" onclick="knapsackResetAnimation()"
+                        style="display: none; flex: 1 1 auto; margin: 5px;">Replay</button>
+                </div>
             </div>
         </div>
     </div>

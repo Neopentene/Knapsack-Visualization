@@ -308,17 +308,10 @@ function knapsackVisualization() {
 
                 setTimeout(() => {
                     if (bag.Capacity > 0) {
-                        if (first) {
-                            setTimeout(() => {
-                                let coordinates = getImgCoordinates()
-                                moveDisappear(coordinates.left, coordinates.top)
-                            }, 1000)
-                            first = false
-                        }
-                        else {
+                        setTimeout(() => {
                             let coordinates = getImgCoordinates()
                             moveDisappear(coordinates.left, coordinates.top)
-                        }
+                        }, 1000)
 
                         if (bag.Capacity - knapsack[0].weight >= 0) {
                             bag.Value += knapsack[0].value
@@ -348,6 +341,9 @@ function knapsackVisualization() {
                         }
                     }
                     else {
+                        BagItems.firstChild.style.transition = "3000ms"
+                        BagItems.firstChild.style.transform = "scale(0.2)"
+                        BagItems.firstChild.style.opacity = "0"
                         setTimeout(() => {
                             deleteNode(0, true)
                         }, 2000)
@@ -364,7 +360,7 @@ function moveDisappear(x, y) {
     BagItems.firstChild.style.zIndex = "-1"
     BagItems.firstChild.style.transition = "2s"
     console.log("move", BagItems.firstChild)
-    BagItems.firstChild.style.transform = `translate(${x}px, ${y}px)`
+    BagItems.firstChild.style.transform = `translate(${x}px, ${y}px) scale(0.2)`
     BagItems.firstChild.style.opacity = "0"
 }
 
