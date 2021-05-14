@@ -287,6 +287,7 @@ function knapsackVisualization() {
     knapsackData.innerHTML = `Weight Remaining: ${capacity}<br>Value: 0`
 
     bag.Capacity = parseInt(capacity)
+    bag.Value = 0
 
     setTimeout(() => {
         knapsackData.innerHTML = ""
@@ -383,7 +384,9 @@ function getImgCoordinates() {
 }
 
 function knapsackResetAnimation() {
-    knapsack = copyKnapsack
+    for (let i = 0; i < copyKnapsack.length; i++) {
+        knapsack[i] = copyKnapsack[i]
+    }
     console.log(knapsack, copyKnapsack)
     BagInnerHtml = CopiedInnerHtml
     BagItems.innerHTML = BagInnerHtml
