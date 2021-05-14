@@ -1,5 +1,5 @@
 let knapsack = [], copyKnapsack = [], bag = { Value: 0, Capacity: 0 };
-let Format = "Format<br>1. Position<br>2. Weight<br>3. Value<br>5. V/W"
+let Format = "Format<br>1. Position<br>2. Weight<br>3. Value<br>4. V/W"
 let capacity = 0;
 let BagInnerHtml = "<h2>Please add items to the knapsack</h2>", CopiedInnerHtml = "";
 let SortedBagInnerHtml = ""
