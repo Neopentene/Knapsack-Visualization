@@ -1,7 +1,7 @@
-let knapsack = [], bag = { Value: 0, Capacity: 0 };
+let knapsack = [], copyKnapsack = [], bag = { Value: 0, Capacity: 0 };
 let Format = "Format<br>1. Position<br>2. Weight<br>3. Value<br>5. V/W"
 let capacity = 0;
-let BagInnerHtml = "<h2>Please add items to the knapsack</h2>";
+let BagInnerHtml = "<h2>Please add items to the knapsack</h2>", CopiedInnerHtml = "";
 let SortedBagInnerHtml = ""
 let rotate = 1;
 
@@ -277,6 +277,11 @@ function knapsackVisualization() {
     let divInnerHtml = ""
     let first = true
 
+    for (let i = 0; i < knapsack.length; i++) {
+        copyKnapsack[i] = knapsack[i]
+    }
+    CopiedInnerHtml = BagInnerHtml
+
     BagItems.style.transition = "0s"
     knapsackData.style.display = "flex"
     knapsackData.innerHTML = `Weight Remaining: ${capacity}<br>Value: 0`
@@ -285,6 +290,9 @@ function knapsackVisualization() {
 
     setTimeout(() => {
         knapsackData.innerHTML = ""
+        setTimeout(() => {
+            document.getElementById("ResetKnapAni").style.display = "flex"
+        }, 4000 * knapsack.length)
         for (let i = 1; i <= knapsack.length; i++) {
             setTimeout(() => {
                 BagItems.firstChild.style.transition = "0s"
@@ -376,6 +384,17 @@ function getImgCoordinates() {
         top: top,
         left: left
     }
+}
+
+function knapsackResetAnimation() {
+    knapsack = copyKnapsack
+    console.log(knapsack, copyKnapsack)
+    BagInnerHtml = CopiedInnerHtml
+    BagItems.innerHTML = BagInnerHtml
+    document.getElementById("KnapsackData").innerHTML = ""
+    document.getElementById("ResetKnapAni").style.display = "none"
+    window.scrollTo(0, 0)
+    knapsackVisualization()
 }
 
 function resetAll() {
